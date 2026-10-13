@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pierluigi Maria Teotini – Mechanical Engineer, CFD and Aerodynamics</title>
+<meta name="description" content="Portfolio of Pierluigi Maria Teotini, mechanical engineer (MUNER – Advanced Automotive Engineering, Racing Car Design). CFD, aerodynamics, composites, vehicle testing.">
+<meta property="og:title" content="Pierluigi Maria Teotini – Mechanical Engineer">
+<meta property="og:description" content="CFD, aerodynamics and composites for racing cars. Selected university and industry projects.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/portrait.webp">
+<meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1317" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+
+<header class="top">
+  <a class="brand" href="#top" aria-label="Pierluigi Maria Teotini, home">P. M. Teotini</a>
+  <nav aria-label="Sections">
+    <a href="#work">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#background">Background</a>
+    <a href="#contact">Contact</a>
+    <a class="btn small" href="assets/cv/Teotini_Pierluigi_CV.pdf" download>Download CV</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="role">Mechanical engineer · CFD, aerodynamics, composites</p>
+      <h1>Pierluigi Maria <span>Teotini</span></h1>
+      <p class="lede">I design and validate the parts of a racing car that move air, carry load and survive vibration. MSc in Advanced Automotive Engineering (Racing Car Design) at MUNER, with training at the Dallara Academy in Modena.</p>
+      <div class="actions">
+        <a class="btn" href="#work">See the projects</a>
+        <a class="btn ghost" href="assets/cv/Teotini_Pierluigi_CV.pdf" download>Download CV (PDF)</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Degree</dt><dd>MSc, 108/110</dd></div>
+        <div><dt>Thesis</dt><dd>CFD of a high-pressure H<sub>2</sub> injector</dd></div>
+        <div><dt>Based in</dt><dd>Firenze, Italy</dd></div>
+      </dl>
+    </div>
+    <figure class="portrait">
+      <img src="assets/img/portrait.webp" width="880" height="1100" alt="Pierluigi Maria Teotini standing in front of a sports car">
+    </figure>
+  </div>
+  <div class="tunnel">
+    <canvas id="flow" aria-hidden="true"></canvas>
+    <p class="tunnel-cap">Airflow around an inverted wing profile, coloured by pressure: blue is pressure, red is suction.</p>
+  </div>
+</section>
+
+<!-- WORK INDEX -->
+<section id="work" class="block">
+  <div class="block-head">
+    <h2>Projects</h2>
+    <p>Seven projects from the MSc and earlier courses, each with the problem, what the team did and what came out. Two extra ones are listed at the end.</p>
+  </div>
+  <ol class="index" aria-label="Project list">
+    <li><a href="#p-h2"><span class="t">Hydrogen injector CFD</span><span class="d">MSc thesis, R&amp;D CFD</span><span class="k">STAR-CCM+</span></a></li>
+    <li><a href="#p-blanking"><span class="t">Sidepod inlet blanking</span><span class="d">CFD and wind tunnel, Formula 3 car</span><span class="k">ANSA · Fluent</span></a></li>
+    <li><a href="#p-modal"><span class="t">Modal testing of an LMP2 rear wing support</span><span class="d">Impact hammer test and FEM</span><span class="k">Ansys</span></a></li>
+    <li><a href="#p-composites"><span class="t">Composites laboratory</span><span class="d">DSC, DMA, tension, compression, bonded joints</span><span class="k">Lab testing</span></a></li>
+    <li><a href="#p-abaqus"><span class="t">Composite structures in Abaqus</span><span class="d">Coupons, sandwich panel, adhesive debonding</span><span class="k">Abaqus</span></a></li>
+    <li><a href="#p-mr"><span class="t">Magnetorheological suspension</span><span class="d">Product design for Pikes Peak</span><span class="k">QFD · CAD</span></a></li>
+    <li><a href="#p-v6"><span class="t">Vibration of a V6 engine</span><span class="d">Six-degree-of-freedom model on elastic mounts</span><span class="k">MATLAB</span></a></li>
+  </ol>
+</section>
+
+<!-- P1: H2 -->
+<article id="p-h2" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">MSc thesis · R&amp;D CFD SRL, Modena · 11/2025 – 05/2026</p>
+    <h3>CFD of a high-pressure hydrogen injector</h3>
+    <p class="sub">Analysis of CFD methodologies applied to a high-pressure H<sub>2</sub> injector in support of the design process. Supervisor: Stefano Fontanesi.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>Master’s thesis, internship at R&amp;D CFD</dd>
+        <dt>Tools</dt><dd>STAR-CCM+, experimental data correlation</dd>
+        <dt>Methods</dt><dd>Steady and unsteady CFD, mesh motion, fluid-structure interaction</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>A high-pressure injector has moving parts and fast transients, so one steady simulation may not be enough. A design team needs to know which modelling level is sufficient and which one is worth its computing cost.</p>
+      <h4>The work</h4>
+      <p>I modelled the injector in STAR-CCM+ and compared approaches of growing complexity: steady and unsteady simulations, with and without mesh motion, and models that couple the fluid with the structure, using experimental data for correlation.</p>
+      <h4>The result</h4>
+      <p>The thesis analyses these CFD methodologies as a support to the injector design process, weighing what each one can predict against its cost. The degree was awarded with 108/110.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P2: blanking -->
+<article id="p-blanking" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Aerodynamics workshop, Advanced Automotive Engineering · December 2023 · team of 8</p>
+    <h3>Sidepod inlet blanking on a Formula 3 car</h3>
+    <p class="sub">Reduce radiator cooling by 3% in the most efficient way, while keeping the aerodynamic balance at 47%.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>CFD workshop followed by a wind tunnel workshop, baseline 2017 Formula 3 car</dd>
+        <dt>Tools</dt><dd>ANSA (geometry and batch mesh), Ansys Fluent, wind tunnel polars and aeromaps</dd>
+        <dt>Target</dt><dd>Cooling −3.0% (±0.2%), front balance 47% (±0.4%)</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>Closing part of the sidepod inlet cuts the flow through the radiator, which can trade cooling for efficiency. The team had to find which blanking shape gets to −3% cooling with the smallest efficiency loss, then restore the 47% balance using the front flap polar.</p>
+      <h4>The work</h4>
+      <p>In CFD we swapped the sidepod geometries in ANSA, meshed them with the batch tool and ran Fluent (50 m/s, 1000 iterations) on a bottom and an internal blanking. In the wind tunnel we built a run list, changed it live when the first run disagreed with CFD, and tested 20% and 35% bottom, 35% external and 35% internal blanking. Then we tried removing the pod wing, set the front wing at 20° to rebalance the car, and fine-tuned the cooling with strips of tape.</p>
+      <figure class="chart" data-chart="blanking">
+        <figcaption><strong>Fig. 1</strong> Radiator flow ratio V/V<sub>0</sub> for each configuration (mean of left and right radiator, wind tunnel). The target is the baseline minus 3 points.</figcaption>
+        <div class="chart-box"></div>
+      </figure>
+      <h4>The result</h4>
+      <p>The final setup is a 35% external blanking with 15&nbsp;mm of extra tape, a front wing angle of 20° and the pod wing mounted. It reached −2.98% radiator flow at 47% balance, against a target of −3.0%. Removing the pod wing reduced cooling a little but worsened efficiency, so it was put back. The final configuration also has the lowest balance sensitivity at small roll angles.</p>
+      <p class="note">Wind tunnel and CFD disagreed on the first run (balance 44.5% in the tunnel against 38.2% in CFD for the 20% bottom blanking), which is why the run list was reordered during the session.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P3: modal -->
+<article id="p-modal" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Dynamic testing of vehicles · A.Y. 2023/24 · team of 9</p>
+    <h3>Modal testing of a BMW LMP2 rear wing support</h3>
+    <p class="sub">Measure the natural frequencies of a carbon component and check them against a finite element model.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>Teamwork project of the vehicle dynamic testing course, with Dallara criteria</dd>
+        <dt>Tools</dt><dd>Impact hammer, acquisition system, FFT and modal software, Ansys modal analysis</dd>
+        <dt>Setup</dt><dd>Free-free condition, bandwidth 1–1600 Hz</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>A rear wing support sees engine, gearbox, wing flutter and track irregularities. Dallara does not accept a component whose first natural frequency is below 15 Hz, so the stiffness of the real part has to be proven, not assumed.</p>
+      <h4>The work</h4>
+      <p>We chose the driving points, calibrated the setup, ran impact tests on the suspended component and checked the coherence of every measurement. In parallel we built an Ansys model from the CAD, with assumed carbon material properties, and compared mode shapes and frequencies. Finally we clamped the model on its real mounting holes.</p>
+      <table class="data" aria-label="Measured modes">
+        <caption><strong>Table 1</strong> First three measured modes</caption>
+        <thead><tr><th>Mode</th><th>Shape</th><th class="num">Frequency (Hz)</th><th class="num">Damping</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Bending</td><td class="num">116.1</td><td class="num">0.15%</td></tr>
+          <tr><td>2</td><td>Torsion</td><td class="num">196.8</td><td class="num">0.27%</td></tr>
+          <tr><td>3</td><td>Bending</td><td class="num">277.1</td><td class="num">0.30%</td></tr>
+        </tbody>
+      </table>
+      <h4>The result</h4>
+      <p>The model and the experiment agree on the mode shapes and, for the first three modes, on the frequencies. With the real constraints the first natural frequency is 98 Hz, far above the 15 Hz limit, so the component is validated. Damping is between 0.1% and 0.5%, higher than the metal parts tested by the other groups (0.27% against 0.03%), as expected for a carbon skin.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P4: composites -->
+<article id="p-composites" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Design of racing car composite structures · A.Y. 2023/24 · team of 5</p>
+    <h3>Composites laboratory</h3>
+    <p class="sub">Thermal, mechanical and bonding tests on the materials used for racing car structures.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>Laboratory report of the composite structures course</dd>
+        <dt>Tests</dt><dd>DSC, DMA, tension, compression, single lap joint shear</dd>
+        <dt>Materials</dt><dd>Carbon-epoxy T800/ER450 and M46J/ER434, sand-blasted aluminium joints</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>The properties on a datasheet depend on the cure, the lay-up and the way a part is tested. Before using a composite in a car, someone has to measure them with the right standard and understand the scatter.</p>
+      <h4>The work</h4>
+      <p>We ran differential scanning calorimetry on uncured and cured samples to find the glass transition and the degree of cure, dynamic mechanical analysis for the viscoelastic behaviour, tensile and compression tests with their standards, and single lap shear tests on aluminium plates bonded at two adhesive thicknesses. Each result was compared with the 2022 edition of the lab.</p>
+      <h4>The result</h4>
+      <div class="stats">
+        <div><b>181.7 °C</b><span>glass transition of T800/ER450, in line with the datasheet</span></div>
+        <div><b>27 MPa</b><span>average adhesive shear strength with a 0.25 mm bond line</span></div>
+        <div><b>≈ 9 kN</b><span>maximum load of a lap joint, at 0.42 mm crosshead displacement</span></div>
+      </div>
+      <p>The second heating ramp showed no further exothermic reaction, so the first cure was complete. The T800/ER450 thermogram has a shoulder that points to a second resin constituent reacting at higher temperature, which explains the high Tg. Joints failed in a mixed cohesive and adhesive way with no peeling, and the values were consistent with the supplier’s data, tested to a different standard.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P5: abaqus -->
+<article id="p-abaqus" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Composite structures, Abaqus activity · February 2024 · team of 5</p>
+    <h3>Composite structures in Abaqus</h3>
+    <p class="sub">Failure of unidirectional coupons, sandwich panel modelling and adhesive debonding with a cohesive zone.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>Three homework assignments of the course, presented to the class</dd>
+        <dt>Tools</dt><dd>Abaqus/CAE (shell, solid, cohesive elements), ply calculator</dd>
+        <dt>Material</dt><dd>AS4/3501-6 carbon-epoxy, aluminium skins, CFRP skin and stiffener</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>A first design needs a fast tool, but the fast tool has to be trusted. The questions were how far a ply calculator is from a finite element model, which failure criterion is safer, and how much the modelling choice changes a sandwich panel result.</p>
+      <h4>The work</h4>
+      <p><b>Homework 1.</b> A 508 × 102 × 3.81 mm unidirectional coupon, loaded axially for ply angles from 0° to 90°, with failure load found at failure index 1 for the maximum stress theory and the Tsai-Wu criterion, including the effect of the cross term F12 and then angle-ply laminates. <b>Homework 2.</b> A 2 × 2 m sandwich panel with 1 mm aluminium skins and a 30 mm core, under 500 Pa, modelled with laminate shells, with solid core and solid shells, and with solid core and thin skins. <b>Homework 3.</b> Debonding of a skin-stiffener joint under tension, with three adhesive spew fillet shapes and a cohesive zone model.</p>
+      <figure class="chart" data-chart="failure">
+        <figcaption><strong>Fig. 2</strong> Failure load per unit width of a unidirectional coupon against the ply angle, for the two failure criteria.</figcaption>
+        <div class="chart-box"></div>
+      </figure>
+      <table class="data" aria-label="Sandwich panel comparison">
+        <caption><strong>Table 2</strong> Sandwich panel, maximum skin stress and deflection</caption>
+        <thead><tr><th>Model</th><th class="num">Stress (MPa)</th><th class="num">Displacement (mm)</th></tr></thead>
+        <tbody>
+          <tr><td>Laminate shells</td><td class="num">3.585</td><td class="num">1.730</td></tr>
+          <tr><td>Solid core, solid shells</td><td class="num">3.334</td><td class="num">1.755</td></tr>
+          <tr><td>Solid core, thin skins</td><td class="num">3.291</td><td class="num">1.777</td></tr>
+          <tr><td>Handbook theory</td><td class="num">2.890</td><td class="num">1.504</td></tr>
+        </tbody>
+      </table>
+      <h4>The result</h4>
+      <p>The ply calculator stays within 7% of Abaqus for the maximum stress theory and 3% for Tsai-Wu, so it is a reliable first design tool and it is conservative on the failure load. Tsai-Wu is the more conservative criterion in tension: the maximum stress theory predicts up to 31% more load at 30°. The cross term F12 moves the Tsai-Wu load by up to about 10%. The three sandwich models agree within 9% on stress and 3% on displacement, while the handbook formula is only a rough estimate. In the debonding study the separation starts at 1875 N for case A and 2699 N for case C, so the fillet shape changes the strength of the joint.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P6: MR -->
+<article id="p-mr" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Automotive Computer Aided Design · MUNER · team of 4</p>
+    <h3>Magnetorheological suspension for Pikes Peak</h3>
+    <p class="sub">From competitor analysis to manufacturing process, in a product design report of about 90 pages.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>Context</dt><dd>Group project of the Advanced Automotive Engineering course</dd>
+        <dt>Tools</dt><dd>Quality Function Deployment, function structures, Simulink, CAD and technical drawings</dd>
+        <dt>Product</dt><dd>Adaptive damper for an off-road hill climb car</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>The Pikes Peak hill climb is 19.99 km long with more than 155 corners, on a mountain road without barriers and with changing weather. A damper that adapts its stiffness in real time lets the driver push harder while keeping the tyres on the road.</p>
+      <h4>The work</h4>
+      <p>We started from the application and the competitors, rated them on performance, reliability and price, and wrote the requirements. A House of Quality linked customer wishes to technical targets. We then estimated costs and the break-even between production options, for a volume of at most 1000 units. The conceptual design went from an abstraction of the fluid-piston interaction to function structures and working principles: check valves with shim packs for bump and rebound, a spool valve, the position of the coil, monotube against twin tube. The last step chose the manufacturing process.</p>
+      <h4>The result</h4>
+      <p>The report ends with a defined damper concept, drawings, and machining chosen over extrusion for the part: the geometry is simple, the mould of extrusion is expensive for such a small volume, and machining gives the same or better precision at a lower cost.</p>
+    </div>
+  </div>
+</article>
+
+<!-- P7: V6 -->
+<article id="p-v6" class="sheet">
+  <header class="sheet-head">
+    <p class="kicker">Mechanical vibrations, MATLAB teamwork · A.Y. 2022/23 · team of 7</p>
+    <h3>Vibration of an Alfa Romeo V6 engine on its mounts</h3>
+    <p class="sub">How much the engine shakes and what force reaches the chassis, from standstill to 6500 rpm.</p>
+  </header>
+  <div class="sheet-body">
+    <aside class="meta">
+      <dl>
+        <dt>My role</dt><dd>Numerical implementation, with one teammate</dd>
+        <dt>Tools</dt><dd>MATLAB (symbolic, eig, ode45, FFT), SolidWorks for inertias</dd>
+        <dt>Engine</dt><dd>Alfa Romeo Busso 3.2 V6 24V, 60°, firing order 1-4-3-6-2-5</dd>
+      </dl>
+    </aside>
+    <div class="story">
+      <h4>The problem</h4>
+      <p>A V6 never has a perfect balance. The unbalanced torques excite roll, pitch and yaw of the engine on its four elastic mounts, and the forces go into the chassis. The question was where the resonances are and whether they matter.</p>
+      <h4>The work</h4>
+      <p>The engine is a rigid body with six degrees of freedom on four triaxial springs and dampers, with Rayleigh damping. The numerical implementation, which I did with a teammate, builds the inertial forces of the six pistons with the exact crank equation, solves the equations of motion by modal analysis and checks the answer with a second integration in ode45. It also runs run-up and run-down ramps, 100 steady speeds and the spectra of displacement and transmitted forces, and verifies Parseval’s theorem.</p>
+      <div class="gallery">
+        <figure>
+          <img src="assets/img/v6-engine.webp" width="700" height="625" loading="lazy" alt="Cutaway view of the Alfa Romeo Busso V6 engine">
+          <figcaption><strong>Fig. 3</strong> The Busso V6 used as reference.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/v6-ramp-up.webp" width="732" height="572" loading="lazy" alt="Linear and angular displacements of the engine during a speed ramp up from 0 to 6500 rpm">
+          <figcaption><strong>Fig. 4</strong> Engine displacements during the run-up to 6500 rpm.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/v6-amplitude.webp" width="700" height="525" loading="lazy" alt="Displacement amplitude of the six degrees of freedom against shaft speed">
+          <figcaption><strong>Fig. 5</strong> Displacement amplitude against shaft speed, 100 steady regimes.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/v6-ramp-down.webp" width="713" height="553" loading="lazy" alt="Displacements during a speed ramp down from 6500 rpm to 0">
+          <figcaption><strong>Fig. 6</strong> The run-down crosses the resonances in the opposite order and with higher peaks.</figcaption>
+        </figure>
+      </div>
+      <table class="data" aria-label="Natural frequencies">
+        <caption><strong>Table 3</strong> Natural frequencies and the time the run-up crosses them</caption>
+        <thead><tr><th>Mode</th><th class="num">1</th><th class="num">2</th><th class="num">3</th><th class="num">4</th><th class="num">5</th><th class="num">6</th></tr></thead>
+        <tbody>
+          <tr><td>ω<sub>n</sub> (rad/s)</td><td class="num">24.36</td><td class="num">24.60</td><td class="num">43.18</td><td class="num">95.58</td><td class="num">135.66</td><td class="num">155.65</td></tr>
+          <tr><td>Run-up (s)</td><td class="num">0.35</td><td class="num">0.36</td><td class="num">0.63</td><td class="num">1.40</td><td class="num">1.99</td><td class="num">2.29</td></tr>
+        </tbody>
+      </table>
+      <h4>The result</h4>
+      <p>The forces are balanced overall, while the torques are the main source of vibration. At low speed the engine crosses its resonances with a peak of about 30 mm, but only for an instant and outside the working range. Above that the response is stable, so the engine is at its best at high speed. The modal solution and the ode45 integration agree.</p>
+    </div>
+  </div>
+</article>
+
+<!-- ALSO -->
+<section class="block also" aria-labelledby="also-title">
+  <div class="block-head">
+    <h2 id="also-title">Also</h2>
+  </div>
+  <div class="also-grid">
+    <div>
+      <h3>Formula SAE front wing</h3>
+      <p class="kicker">Firenze Race Team, 2018 – 2020</p>
+      <p>As an aerodynamic team member I designed a front wing assembly in SolidWorks, validated it with CFD, and built composite bodywork and aerodynamic components for the car.</p>
+    </div>
+    <div>
+      <h3>Space debris gripper</h3>
+      <p class="kicker">Bachelor thesis, University of Firenze, 2021</p>
+      <p>Analysis of grippers for capturing cooperative and non-cooperative targets, an application of robotics to space debris removal. Degree mark 107/110.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="block">
+  <div class="block-head">
+    <h2>Skills</h2>
+    <p>Grouped by what I can do with them. Levels are the ones in my CV.</p>
+  </div>
+  <div class="skills">
+    <div>
+      <h3>CFD and aerodynamics</h3>
+      <ul>
+        <li>STAR-CCM+ <em>advanced</em></li>
+        <li>Ansys Fluent, OpenFOAM <em>basic</em></li>
+        <li>Turbulence modelling, mesh motion, fluid-structure interaction</li>
+        <li>Wind tunnel testing, polars, aeromaps</li>
+        <li>ANSA pre-processing</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Composites and structures</h3>
+      <ul>
+        <li>DSC, DMA, tension, compression, bonded joints</li>
+        <li>Abaqus <em>intermediate</em>, Marc Mentat <em>advanced</em>, NASTRAN <em>basic</em></li>
+        <li>Failure criteria, sandwich panels, cohesive zone models</li>
+        <li>Composite manufacturing for bodywork and aero parts</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Vehicle and testing</h3>
+      <ul>
+        <li>Vehicle dynamics and vibration</li>
+        <li>Impact hammer modal testing</li>
+        <li>Signal processing and FFT</li>
+        <li>Quality Function Deployment and costing</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Design and code</h3>
+      <ul>
+        <li>SolidWorks <em>advanced</em>, 3DEXPERIENCE <em>intermediate</em></li>
+        <li>MATLAB <em>advanced</em>, C <em>basic</em>, Python <em>beginner</em></li>
+        <li>LaTeX <em>advanced</em>, MS Office <em>intermediate</em></li>
+        <li>Additive manufacturing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background" class="block">
+  <div class="block-head">
+    <h2>Background</h2>
+  </div>
+  <ol class="timeline">
+    <li>
+      <span class="when">2022 – 2026</span>
+      <div><h3>MSc Advanced Automotive Engineering, Racing Car Design</h3>
+      <p>MUNER, Modena and Dallara Academy. Degree 108/110.</p></div>
+      <img src="assets/img/muner.png" alt="MUNER logo" loading="lazy" width="120" height="60">
+    </li>
+    <li>
+      <span class="when">2021 – 2022</span>
+      <div><h3>Single courses in Aerospace Engineering</h3>
+      <p>Politecnico di Torino. Applied aerodynamics, aeronautic structures, propulsion.</p></div>
+      <img src="assets/img/polito.png" alt="Politecnico di Torino logo" loading="lazy" width="120" height="53">
+    </li>
+    <li>
+      <span class="when">2016 – 2021</span>
+      <div><h3>BSc Mechanical Engineering</h3>
+      <p>University of Firenze, scientific-mechanical curriculum. Degree 107/110.</p></div>
+      <img src="assets/img/unifi.png" alt="University of Firenze logo" loading="lazy" width="120" height="55">
+    </li>
+  </ol>
+  <ul class="creds">
+    <li><img src="assets/img/solidworks.png" alt="" loading="lazy" width="64" height="64"><span>Dassault Systèmes, Mechanical Design (SolidWorks Associate), 2022</span></li>
+    <li><img src="assets/img/cambridge.png" alt="" loading="lazy" width="110" height="38"><span>Cambridge English, Level B2, score 174, 2016</span></li>
+    <li><span class="lang">Languages</span><span>Italian (native), English (B2), Spanish (B1)</span></li>
+    <li><span class="lang">Beyond engineering</span><span>Canoe polo, top Italian league with Canottieri Comunali Firenze, since 2012</span></li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="block contact">
+  <div class="block-head">
+    <h2>Contact</h2>
+    <p>I am looking for R&amp;D roles in motorsport, automotive and aerospace. Write to me or download my CV.</p>
+  </div>
+  <div class="contact-grid">
+    <a class="btn" href="mailto:pierluigi.teotini@gmail.com">pierluigi.teotini@gmail.com</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/pierluigi-maria-teotini" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="assets/cv/Teotini_Pierluigi_CV.pdf" download>Download CV (PDF)</a>
+    <p class="loc">Firenze, Italy · +39 334 582 9621</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>© 2026 Pierluigi Maria Teotini. Project data comes from university reports written with my teammates.</p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lb-close" aria-label="Close image">Close</button>
+  <img alt="">
+  <p class="lb-cap"></p>
+</div>
+
+<script src="assets/js/flow.js" defer></script>
+<script src="assets/js/charts.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
