@@ -198,7 +198,6 @@ figcaption strong { color: var(--ink); }
 .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border-radius: 2px; cursor: zoom-in; }
 .gallery figcaption { padding: 8px 2px 2px; }
 .gallery.wide img { aspect-ratio: auto; }
-.gallery .full { grid-column: 1 / -1; }
 
 /* Also, skills, background --------------------------------------------- */
 .also-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; border-top: 2px solid var(--ink); }
