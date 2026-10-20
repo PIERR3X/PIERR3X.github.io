@@ -53,10 +53,6 @@
       <img src="assets/img/portrait.webp" width="880" height="1100" alt="Pierluigi Maria Teotini standing in front of a sports car">
     </figure>
   </div>
-  <div class="tunnel">
-    <canvas id="flow" aria-hidden="true"></canvas>
-    <p class="tunnel-cap">Airflow around an inverted wing profile, coloured by pressure: blue is pressure, red is suction.</p>
-  </div>
 </section>
 
 <!-- WORK INDEX -->
@@ -66,7 +62,7 @@
     <p>Seven projects from the MSc and earlier courses, each with the problem, what the team did and what came out. Two extra ones are listed at the end.</p>
   </div>
   <ol class="index" aria-label="Project list">
-    <li><a href="#p-h2"><span class="t">Hydrogen injector CFD</span><span class="d">MSc thesis, R&amp;D CFD</span><span class="k">STAR-CCM+</span></a></li>
+    <li><a href="#p-h2"><span class="t">Hydrogen injector CFD</span><span class="d">MSc Thesis Internship | CFD Analyst @ R&amp;D CFD</span><span class="k">STAR-CCM+</span></a></li>
     <li><a href="#p-blanking"><span class="t">Sidepod inlet blanking</span><span class="d">CFD and wind tunnel, Formula 3 car</span><span class="k">ANSA · Fluent</span></a></li>
     <li><a href="#p-modal"><span class="t">Modal testing of an LMP2 rear wing support</span><span class="d">Impact hammer test and FEM</span><span class="k">Ansys</span></a></li>
     <li><a href="#p-composites"><span class="t">Composites laboratory</span><span class="d">DSC, DMA, tension, compression, bonded joints</span><span class="k">Lab testing</span></a></li>
@@ -79,14 +75,14 @@
 <!-- P1: H2 -->
 <article id="p-h2" class="sheet">
   <header class="sheet-head">
-    <p class="kicker">MSc thesis · R&amp;D CFD SRL, Modena · 11/2025 – 05/2026</p>
+    <p class="kicker">MSc Thesis Internship | CFD Analyst @ R&amp;D CFD SRL, in collaboration with DUMAREY group · Modena · 11/2025 – 05/2026</p>
     <h3>CFD of a high-pressure hydrogen injector</h3>
     <p class="sub">Analysis of CFD methodologies applied to a high-pressure H<sub>2</sub> injector in support of the design process. Supervisor: Stefano Fontanesi.</p>
   </header>
   <div class="sheet-body">
     <aside class="meta">
       <dl>
-        <dt>Context</dt><dd>Master’s thesis, internship at R&amp;D CFD</dd>
+        <dt>Context</dt><dd>Master’s thesis internship as CFD Analyst at R&amp;D CFD SRL, in collaboration with DUMAREY group</dd>
         <dt>Tools</dt><dd>STAR-CCM+, experimental data correlation</dd>
         <dt>Methods</dt><dd>Steady and unsteady CFD, mesh motion, fluid-structure interaction</dd>
       </dl>
@@ -96,7 +92,26 @@
       <p>A high-pressure injector has moving parts and fast transients, so one steady simulation may not be enough. A design team needs to know which modelling level is sufficient and which one is worth its computing cost.</p>
       <h4>The work</h4>
       <p>I modelled the injector in STAR-CCM+ and compared approaches of growing complexity: steady and unsteady simulations, with and without mesh motion, and models that couple the fluid with the structure, using experimental data for correlation.</p>
+      <div class="gallery wide">
+        <figure>
+          <img src="assets/img/h2-mfr.webp" width="1416" height="794" loading="lazy" alt="Normalised mass flow rate over an injection event: transient, steady-state points and experimental curve">
+          <figcaption><strong>Fig. 1</strong> Mass flow rate: steady-state points against the transient simulation and the experimental curve. Steady-state matches the measurements at a fraction of the cost.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/h2-force.webp" width="1470" height="840" loading="lazy" alt="Normalised needle pneumatic force over time for transient and steady-state models, with needle lift">
+          <figcaption><strong>Fig. 2</strong> Needle pneumatic force: steady-state against the transient reference. Agreement is good while the needle moves one way; errors grow to about 15% during fast pressurisation transients.</figcaption>
+        </figure>
+        <figure class="full">
+          <img src="assets/img/h2-dfbi.webp" width="1600" height="695" loading="lazy" alt="Diagram of the Dynamic Fluid Body Interaction model: external forces drive needle motion, which drives mass flow and fluid force">
+          <figcaption><strong>Fig. 3</strong> DFBI model: the needle motion is no longer imposed but computed from magnetic, spring, seal and fluid forces.</figcaption>
+        </figure>
+        <figure class="full">
+          <img src="assets/img/h2-overset.webp" width="1600" height="695" loading="lazy" alt="Needle trajectories and pneumatic force for DFBI overset, DFBI morphing and transient morphing models, with a comparison table">
+          <figcaption><strong>Fig. 4</strong> DFBI with overset mesh against morphing and transient: same force trend, sealing contacts reproduced, and more than 50% lower cost.</figcaption>
+        </figure>
+      </div>
       <h4>The result</h4>
+      <p>A steady-state model predicts mass flow rate as well as the transient one and is the right tool for fast design evaluation. A 2D DFBI model with overset mesh predicts the needle motion from forces alone and reproduces the sealing contacts at more than 50% lower cost than morphing, which makes it a reliable tool to validate concepts.</p>
       <p>The thesis analyses these CFD methodologies as a support to the injector design process, weighing what each one can predict against its cost. The degree was awarded with 108/110.</p>
     </div>
   </div>
@@ -123,7 +138,7 @@
       <h4>The work</h4>
       <p>In CFD we swapped the sidepod geometries in ANSA, meshed them with the batch tool and ran Fluent (50 m/s, 1000 iterations) on a bottom and an internal blanking. In the wind tunnel we built a run list, changed it live when the first run disagreed with CFD, and tested 20% and 35% bottom, 35% external and 35% internal blanking. Then we tried removing the pod wing, set the front wing at 20° to rebalance the car, and fine-tuned the cooling with strips of tape.</p>
       <figure class="chart" data-chart="blanking">
-        <figcaption><strong>Fig. 1</strong> Radiator flow ratio V/V<sub>0</sub> for each configuration (mean of left and right radiator, wind tunnel). The target is the baseline minus 3 points.</figcaption>
+        <figcaption><strong>Fig. 5</strong> Radiator flow ratio V/V<sub>0</sub> for each configuration (mean of left and right radiator, wind tunnel). The target is the baseline minus 3 points.</figcaption>
         <div class="chart-box"></div>
       </figure>
       <h4>The result</h4>
@@ -220,7 +235,7 @@
       <h4>The work</h4>
       <p><b>Homework 1.</b> A 508 × 102 × 3.81 mm unidirectional coupon, loaded axially for ply angles from 0° to 90°, with failure load found at failure index 1 for the maximum stress theory and the Tsai-Wu criterion, including the effect of the cross term F12 and then angle-ply laminates. <b>Homework 2.</b> A 2 × 2 m sandwich panel with 1 mm aluminium skins and a 30 mm core, under 500 Pa, modelled with laminate shells, with solid core and solid shells, and with solid core and thin skins. <b>Homework 3.</b> Debonding of a skin-stiffener joint under tension, with three adhesive spew fillet shapes and a cohesive zone model.</p>
       <figure class="chart" data-chart="failure">
-        <figcaption><strong>Fig. 2</strong> Failure load per unit width of a unidirectional coupon against the ply angle, for the two failure criteria.</figcaption>
+        <figcaption><strong>Fig. 6</strong> Failure load per unit width of a unidirectional coupon against the ply angle, for the two failure criteria.</figcaption>
         <div class="chart-box"></div>
       </figure>
       <table class="data" aria-label="Sandwich panel comparison">
@@ -288,19 +303,19 @@
       <div class="gallery">
         <figure>
           <img src="assets/img/v6-engine.webp" width="700" height="625" loading="lazy" alt="Cutaway view of the Alfa Romeo Busso V6 engine">
-          <figcaption><strong>Fig. 3</strong> The Busso V6 used as reference.</figcaption>
+          <figcaption><strong>Fig. 7</strong> The Busso V6 used as reference.</figcaption>
         </figure>
         <figure>
           <img src="assets/img/v6-ramp-up.webp" width="732" height="572" loading="lazy" alt="Linear and angular displacements of the engine during a speed ramp up from 0 to 6500 rpm">
-          <figcaption><strong>Fig. 4</strong> Engine displacements during the run-up to 6500 rpm.</figcaption>
+          <figcaption><strong>Fig. 8</strong> Engine displacements during the run-up to 6500 rpm.</figcaption>
         </figure>
         <figure>
           <img src="assets/img/v6-amplitude.webp" width="700" height="525" loading="lazy" alt="Displacement amplitude of the six degrees of freedom against shaft speed">
-          <figcaption><strong>Fig. 5</strong> Displacement amplitude against shaft speed, 100 steady regimes.</figcaption>
+          <figcaption><strong>Fig. 9</strong> Displacement amplitude against shaft speed, 100 steady regimes.</figcaption>
         </figure>
         <figure>
           <img src="assets/img/v6-ramp-down.webp" width="713" height="553" loading="lazy" alt="Displacements during a speed ramp down from 6500 rpm to 0">
-          <figcaption><strong>Fig. 6</strong> The run-down crosses the resonances in the opposite order and with higher peaks.</figcaption>
+          <figcaption><strong>Fig. 10</strong> The run-down crosses the resonances in the opposite order and with higher peaks.</figcaption>
         </figure>
       </div>
       <table class="data" aria-label="Natural frequencies">
@@ -442,7 +457,6 @@
   <p class="lb-cap"></p>
 </div>
 
-<script src="assets/js/flow.js" defer></script>
 <script src="assets/js/charts.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 </body>
