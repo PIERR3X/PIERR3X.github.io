@@ -91,15 +91,15 @@
       <h4>The problem</h4>
       <p>A high-pressure injector has moving parts and fast transients, so one steady simulation may not be enough. A design team needs to know which modelling level is sufficient and which one is worth its computing cost.</p>
       <h4>The work</h4>
-      <p>I modelled the injector in STAR-CCM+ and compared approaches of growing complexity: steady and unsteady simulations, with and without mesh motion, and models that couple the fluid with the structure, using experimental data for correlation.</p>
+      <p>I modelled the injector in STAR-CCM+ and compared approaches of growing complexity: steady and unsteady simulations, without and with mesh motion (morphing and overset techniques), and models that take into account the fluid-structure interaction and the external actions to compute the body motion (DFBI approach), using experimental data for correlation and model validation.</p>
       <div class="gallery wide">
         <figure>
           <img src="assets/img/h2-mfr.webp" width="1416" height="794" loading="lazy" alt="Normalised mass flow rate over an injection event: transient, steady-state points and experimental curve">
-          <figcaption><strong>Fig. 1</strong> Mass flow rate: steady-state points against the transient simulation and the experimental curve. Steady-state matches the measurements at a fraction of the cost.</figcaption>
+          <figcaption><strong>Fig. 1</strong> Mass flow rate: steady-state points reconstruction against the transient simulation and the experimental curve. Steady-state matches the measurements at a fraction of the cost.</figcaption>
         </figure>
         <figure>
           <img src="assets/img/h2-force.webp" width="1470" height="840" loading="lazy" alt="Normalised needle pneumatic force over time for transient and steady-state models, with needle lift">
-          <figcaption><strong>Fig. 2</strong> Needle pneumatic force: steady-state against the transient reference. Agreement is good while the needle moves one way; errors grow to about 15% during fast pressurisation transients.</figcaption>
+          <figcaption><strong>Fig. 2</strong> Needle pneumatic force: steady-state against the transient reference. Agreement is good as long as the needle does not invert its motion with respect to the flow; errors grow to about 15% during fast pressurisation transients.</figcaption>
         </figure>
         <figure class="full">
           <img src="assets/img/h2-dfbi.webp" width="1600" height="695" loading="lazy" alt="Diagram of the Dynamic Fluid Body Interaction model: external forces drive needle motion, which drives mass flow and fluid force">
@@ -111,8 +111,9 @@
         </figure>
       </div>
       <h4>The result</h4>
-      <p>A steady-state model predicts mass flow rate as well as the transient one and is the right tool for fast design evaluation. A 2D DFBI model with overset mesh predicts the needle motion from forces alone and reproduces the sealing contacts at more than 50% lower cost than morphing, which makes it a reliable tool to validate concepts.</p>
-      <p>The thesis analyses these CFD methodologies as a support to the injector design process, weighing what each one can predict against its cost. The degree was awarded with 108/110.</p>
+      <p>The thesis analyses these CFD methodologies as a support to the injector design process, weighing what each one can predict against its cost. A steady-state model predicts mass flow rate as well as the transient one and is the right tool for fast design evaluation. A 2D DFBI model with overset mesh predicts the needle motion from forces alone and reproduces the sealing contacts at more than 50% lower cost than morphing, which makes it a reliable tool to validate concepts. The morphing technique remains the most reliable for final design analysis and validation.</p>
+      <p>The degree was awarded with 108/110.</p>
+      <p class="doc-links"><a class="btn ghost" href="assets/docs/Teotini_MSc_Thesis.pdf" target="_blank" rel="noopener">Full thesis (PDF)</a> <a class="btn ghost" href="assets/docs/Teotini_MSc_Thesis_Presentation.pdf" target="_blank" rel="noopener">Thesis presentation (PDF)</a></p>
     </div>
   </div>
 </article>

@@ -269,3 +269,4 @@ figcaption strong { color: var(--ink); }
   .top, .lightbox { display: none; }
   .sheet { break-inside: avoid; }
 }
+.doc-links { display: flex; flex-wrap: wrap; gap: 12px; }
